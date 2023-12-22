@@ -1,0 +1,3 @@
+export const TRANSFER_AMOUNT = 1; // UXION
+export const GAS_AMOUNT_TOKEN_TRANSFER = 0; // UXION
+export const GAS_LIMIT_TOKEN_TRANSFER = '200000';

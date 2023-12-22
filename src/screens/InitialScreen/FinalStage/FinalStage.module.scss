@@ -1,0 +1,74 @@
+@import '@/styles/mixins/media';
+@import '@/styles/mixins/common';
+@import '@/styles/animations';
+
+.root {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: transparent;
+  padding: 0 24px;
+}
+
+.square {
+  position: absolute;
+  top: calc(30vh + 1px);
+  display: block;
+  left: calc(50% + 2px);
+  transform: translateX(-50%) rotate(45deg);
+  transform-origin: center center;
+  width: 24px;
+  height: 24px;
+  transition: all 0.35s ease-in-out 1s;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.heading,
+.error,
+.loading {
+  font-family: var(--font-respira);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 154.545%;
+  transition: all 0.35s ease-in-out 1.2s;
+  text-align: center;
+  max-width: 70%;
+  color: #000;
+
+  @include tablet {
+    font-size: 56px;
+    line-height: 221.429%;
+  }
+
+  @include desktop {
+    transform: translateY(15%);
+    font-size: 80px;
+    line-height: 155%;
+  }
+}
+
+.heading.isLoaded {
+  transition: all 0.35s ease-in-out 1.2s;
+  opacity: 1 !important;
+}
+
+.loading,
+.error {
+  line-height: 1.2;
+}
+
+.errorWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tryAgain {
+  margin-top: 36px;
+  @extend %button-dark;
+}
